@@ -30,8 +30,8 @@ spring:
             predicates:
               - Path=/jenkins/**
             uri: http://10.10.3.27:7778                  
-            filters:
-              - StripPrefix=1
+            # filters:
+              # - StripPrefix=1
       # default-filters:
     #         - Forwarded
     # globalcors:
