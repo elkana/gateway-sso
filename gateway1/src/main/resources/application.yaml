@@ -16,7 +16,7 @@ spring:
             uri: ${VAADIN_UI_URL:http://localhost:2600}            
           - id: vaadin-sso-route
             predicates:
-              - Path=/vaadin-sso/**
+              - Path=/vaadin-sso1/**
             uri: ${VAADIN_SSO_URL:http://localhost:2601}
             filters:
               - TokenRelay=
