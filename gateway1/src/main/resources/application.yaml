@@ -8,14 +8,6 @@ spring:
     gateway:    
       server:
         webmvc:
-          default-filters:
-            - Forwarded     
-          x-forwarded-request-headers-filter:
-            enabled: true
-            host-enabled: true
-            proto-enabled: true
-            port-enabled: true
-            prefix-enabled: true
           routes:
           - id: hello-route
             predicates:
@@ -37,11 +29,9 @@ spring:
           - id: jenkins-route
             predicates:
               - Path=/jenkins/**
-            uri: http://172.17.0.1:7778                  
+            uri: http://172.17.0.1:8080                  
             filters:
-              - RewritePath=/jenkins/(?<segment>.*), /${segment}
-              - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
-              - AddRequestHeader=X-Forwarded-Proto, https
+              - StripPrefix=1
       # default-filters:
     #         - Forwarded
     # globalcors:
