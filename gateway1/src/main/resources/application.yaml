@@ -37,7 +37,9 @@ spring:
           - id: jenkins-route
             predicates:
               - Path=/jenkins/**
-            uri: http://172.17.0.1:7778                  
+            uri: http://localhost:7778                  
+            filters:
+            - StripPrefix=1
 
       # default-filters:
     #         - Forwarded
