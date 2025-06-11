@@ -1,0 +1,50 @@
+server:
+  forward-headers-strategy: framework
+
+spring:
+  application:
+      name: gateway1
+  cloud:
+    gateway:     
+      server:
+        webmvc:
+          x-forwarded-request-headers-filter:
+            enabled: true
+            host-enabled: true
+            proto-enabled: true
+            port-enabled: true
+            prefix-enabled: true
+          routes:
+          - id: hello-route
+            predicates:
+              - Path=/hello/**
+            uri: ${HELLO_SERVICE_URL:http://localhost:1010}
+          - id: vaadin-ui-route
+            predicates:
+              - Path=/vaadin-ui/**
+            uri: ${VAADIN_UI_URL:http://localhost:2600}            
+          - id: vaadin-sso-route
+            predicates:
+              - Path=/vaadin-sso1/**
+            uri: ${VAADIN_SSO_URL:http://localhost:2601}
+            filters:
+              - TokenRelay=
+              - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
+              - AddRequestHeader=X-Forwarded-Proto, https
+              - AddRequestHeader=X-Forwarded-Port, 7777
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            provider: keycloak
+            client-id: cashier-dev2-client
+            authorization-grant-type: authorization_code
+            scope: openid,profile,email,roles
+        provider:
+          keycloak:
+            issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
+            token-uri: https://ppusso.devoutsys.com/oauth2/token
+            user-name-attribute: preferred_username
+
+    
