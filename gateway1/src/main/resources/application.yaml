@@ -35,9 +35,12 @@ spring:
           - id: jenkins-route
             predicates:
               - Path=/jenkins/**
-            uri: ${JENKINS_URL:http://localhost:7778}            
+            uri: http://172.17.0.1:7778
             filters:
               - StripPrefix=1
+              - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
+              - AddRequestHeader=X-Forwarded-Proto, https
+              - AddRequestHeader=X-Forwarded-Port, 7777
   security:
     oauth2:
       client:
