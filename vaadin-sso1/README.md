@@ -4,9 +4,9 @@
 A simple working demo to test SSO Login using ROLE.
 
 # Test
-- https://ppusso.devsysout.com:7777/vaadin-sso/cashier
-- https://ppusso.devsysout.com:7777/vaadin-sso/superuser
-- https://ppusso.devsysout.com:7777/vaadin-sso/resource
+- https://ppusso.devsysout.com:7777/vaadin-sso1/cashier
+- https://ppusso.devsysout.com:7777/vaadin-sso1/superuser
+- https://ppusso.devsysout.com:7777/vaadin-sso1/resource
 
 # Keycloak Setup
 1. create REALM: `los-realm`

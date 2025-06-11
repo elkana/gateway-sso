@@ -1,5 +1,7 @@
 # Vaadin 2600
 
+# Test
+https://ppusso.devoutsys.com:7777/vaadin-ui/
 
 # Run
 ```sh
