@@ -27,8 +27,6 @@ spring:
             predicates:
               - Path=/jenkins/**
             uri: ${JENKINS_URL:http://10.10.3.27:7778}
-            filters:
-              - StripPrefix=1
 
   security:
     oauth2:
