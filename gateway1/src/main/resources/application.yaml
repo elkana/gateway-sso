@@ -35,11 +35,11 @@ spring:
               - AddRequestHeader=X-Forwarded-Proto, https
               - AddRequestHeader=X-Forwarded-Port, 7777
           - id: jenkins-route
-            predicates:
-              - Path=/jenkins/**
+            # predicates:
+              # - Path=/jenkins/**
             uri: http://localhost:7778                  
             filters:
-            - StripPrefix=1
+              - RewritePath=/jenkins/(?<segment>.*), /${segment}
 
       # default-filters:
     #         - Forwarded
