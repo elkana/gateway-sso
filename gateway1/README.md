@@ -7,7 +7,7 @@ References :
 - git2
 
 # Test
-- https://ppusso.devoutsys.com:7777/los-hello/time
+- https://ppusso.devoutsys.com:7777/hello/time
 - https://ppusso.devoutsys.com:7777/vaadin-ui/
 - https://ppusso.devoutsys.com:7777/vaadin-sso/
 
