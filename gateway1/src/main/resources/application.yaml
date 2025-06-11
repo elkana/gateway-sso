@@ -29,7 +29,7 @@ spring:
           - id: jenkins-route
             predicates:
               - Path=/jenkins/**
-            uri: http://172.17.0.1:8080                  
+            uri: http://10.10.3.27:7778                  
             filters:
               - StripPrefix=1
       # default-filters:
