@@ -30,7 +30,7 @@ docker rmi gateway1 || true
 docker build gateway1/. -t gateway1
 docker rm -f gateway1 || true
 # need to re-register domain. 8080 is port accessible by gateway container. please test via curl first.
-docker run -dp 7777:8080 -e VAADIN_SSO_URL=http://vaadin-sso1:8080 -v /home/adminkc/cert-gateway/fullchain2.pem:/app/certs/certssl.pem -v /home/adminkc/cert-gateway/privkey2.pem:/app/certs/keyssl.pem --name=gateway1 --network=gateway1-network gateway1
+docker run -dp 7777:8080 -e JENKINS_URL=http://172.17.0.1:7778 -e VAADIN_SSO_URL=http://vaadin-sso1:8080 -v /home/adminkc/cert-gateway/fullchain2.pem:/app/certs/certssl.pem -v /home/adminkc/cert-gateway/privkey2.pem:/app/certs/keyssl.pem --name=gateway1 --network=gateway1-network gateway1
 docker image prune -f || true
 ```
 
