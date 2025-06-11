@@ -37,7 +37,7 @@ spring:
           - id: jenkins-route
             predicates:
               - Path=/jenkins/**
-            uri: http://localhost:7778                  
+            uri: http://172.17.0.1:7778                  
             filters:
               - RewritePath=/jenkins/(?<segment>.*), /${segment}
 
