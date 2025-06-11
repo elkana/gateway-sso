@@ -40,7 +40,8 @@ spring:
             uri: http://172.17.0.1:7778                  
             filters:
               - RewritePath=/jenkins/(?<segment>.*), /${segment}
-
+              - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
+              - AddRequestHeader=X-Forwarded-Proto, https
       # default-filters:
     #         - Forwarded
     # globalcors:
