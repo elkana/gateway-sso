@@ -32,6 +32,12 @@ spring:
               - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
               - AddRequestHeader=X-Forwarded-Proto, https
               - AddRequestHeader=X-Forwarded-Port, 7777
+          - id: jenkins-route
+            predicates:
+              - Path=/jenkins/**
+            uri: ${VAADIN_UI_URL:http://localhost:7778}            
+            filters:
+            - RewritePath=/jenkins/(?<segment>.*), /$\\{segment}
   security:
     oauth2:
       client:
