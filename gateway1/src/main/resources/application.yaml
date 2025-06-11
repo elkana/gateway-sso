@@ -5,9 +5,11 @@ spring:
   application:
       name: gateway1
   cloud:
-    gateway:     
+    gateway:    
       server:
         webmvc:
+          default-filters:
+            - Forwarded     
           x-forwarded-request-headers-filter:
             enabled: true
             host-enabled: true
@@ -41,6 +43,17 @@ spring:
               - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
               - AddRequestHeader=X-Forwarded-Proto, https
               - AddRequestHeader=X-Forwarded-Port, 7777
+              - AddRequestHeader=X-Forwarded-Prefix, /jenkins                     
+
+      # default-filters:
+    #         - Forwarded
+    # globalcors:
+    #   cors-configurations:
+    #     '[/**]':
+    #       allowedOrigins: "*"
+    #       allowedMethods: "*"
+    #       allowedHeaders: "*"              
+
   security:
     oauth2:
       client:
