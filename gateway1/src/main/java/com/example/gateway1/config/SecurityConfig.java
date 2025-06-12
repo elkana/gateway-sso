@@ -13,6 +13,9 @@ public class SecurityConfig {
         public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
                 return http.csrf(c -> c.disable())
                                 .authorizeHttpRequests(r -> r
+                                                .requestMatchers("/api/**").authenticated()
+                                                // .requestMatchers("/actuator/**").permitAll()
+                                                // .requestMatchers("/v3/api-docs/**").permitAll()
                                                 .anyRequest().permitAll())
                                 .build();
 

@@ -20,9 +20,6 @@ spring:
             uri: ${VAADIN_SSO_URL:http://localhost:2601}
             filters:
               - TokenRelay=
-              # - AddRequestHeader=X-Forwarded-Host, ppusso.devoutsys.com
-              # - AddRequestHeader=X-Forwarded-Proto, https
-              # - AddRequestHeader=X-Forwarded-Port, 7777
           - id: jenkins-route
             predicates:
               - Path=/jenkins/**
@@ -31,6 +28,8 @@ spring:
             predicates:
               - Path=/api/los/**
             uri: ${API_LOS_URL:http://localhost:2501}            
+            filters:
+              - TokenRelay=
 
   security:
     oauth2:
