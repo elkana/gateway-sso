@@ -50,4 +50,7 @@ spring:
         jwt:
           issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
           # jwk-set-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/certs
-
+        opaquetoken:
+          client-id: cashier-dev2-client
+          client-secret: 12345678-123
+          introspection-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token/introspect
