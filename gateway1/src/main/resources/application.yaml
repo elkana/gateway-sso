@@ -46,3 +46,8 @@ spring:
             issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
             token-uri: https://ppusso.devoutsys.com/oauth2/token
             user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
+          # jwk-set-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/certs
+
