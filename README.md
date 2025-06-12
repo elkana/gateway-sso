@@ -6,7 +6,7 @@ WARNING ! Use for DEVELOPMENT only. For Production use should have own git repos
 # Test
 - https://ppusso.devoutsys.com:7777/los-hello/time
 - https://ppusso.devoutsys.com:7777/vaadin-ui/
-- https://ppusso.devoutsys.com:7777/vaadin-sso/
+- https://ppusso.devoutsys.com:7777/vaadin-sso1/
 
 ## Gateway Projects
 - `gateway1` (Recommended, network without host) a clean gateway acting a proxy to support secured (oauth2) and unsecured downstream services.

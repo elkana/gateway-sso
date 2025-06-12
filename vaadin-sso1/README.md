@@ -4,6 +4,7 @@
 A simple working demo to test SSO Login using ROLE.
 
 # Test
+- https://ppusso.devsysout.com:7777/vaadin-sso1/
 - https://ppusso.devsysout.com:7777/vaadin-sso1/cashier
 - https://ppusso.devsysout.com:7777/vaadin-sso1/superuser
 - https://ppusso.devsysout.com:7777/vaadin-sso1/resource
@@ -14,8 +15,7 @@ A simple working demo to test SSO Login using ROLE.
 3. create CLIENT-ID: `cashier-dev2-client`
 3a. Valid Redirect Uris: 
     - `https://ppusso.devoutsys.com:7777/*`
-    - `http://vaadin-sso:8080/*`
-    - `http://localhost:2601/*`
+    - `http://vaadin-sso1:8080/*`
 > Dont add another redirect uris may confuse sso client ! i do trial error to set this part.
 4. create 2 dummy users:
 - elkana with role `superuser`
