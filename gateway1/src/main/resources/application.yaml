@@ -1,6 +1,7 @@
 spring:
   application:
       name: gateway1
+# TODO this should be set externally, e.g. in a docker-compose file      
   cloud:
     gateway:    
       server:
@@ -24,10 +25,10 @@ spring:
             predicates:
               - Path=/jenkins/**
             uri: ${JENKINS_URL:http://10.10.3.27:7778}
-          - id: api-los-route
+          - id: api-los-ap-svc-route
             predicates:
-              - Path=/api/los/**
-            uri: ${API_LOS_URL:http://localhost:2501}            
+              - Path=/api/legacy/los-ap-svc/**
+            uri: ${API_URL:http://localhost:2501}            
             filters:
               - TokenRelay=
 
@@ -45,5 +46,3 @@ spring:
             issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
             token-uri: https://ppusso.devoutsys.com/oauth2/token
             user-name-attribute: preferred_username
-
-    
