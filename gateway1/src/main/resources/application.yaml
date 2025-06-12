@@ -44,7 +44,8 @@ spring:
         provider:
           keycloak:
             issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
-            token-uri: https://ppusso.devoutsys.com/oauth2/token
+            token-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token
+            # token-uri: https://ppusso.devoutsys.com/oauth2/token
             user-name-attribute: preferred_username
       resourceserver:
         jwt:
