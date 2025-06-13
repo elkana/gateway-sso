@@ -60,7 +60,8 @@ spring:
         registration:
           keycloak:
             provider: keycloak
-            client-id: cashier-dev2-client
+            client-id: gateway-sso-client
+            # client-id: cashier-dev2-client
             authorization-grant-type: authorization_code
             scope: openid,profile,email,roles
         provider:
@@ -74,6 +75,7 @@ spring:
           issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
           # jwk-set-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/certs
         opaquetoken:
-          client-id: cashier-dev2-client
-          client-secret: 12345678-123
+          client-id: gateway-sso-client
+          # client-id: cashier-dev2-client
+          # client-secret: 12345678-123
           introspection-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token/introspect
