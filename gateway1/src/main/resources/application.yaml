@@ -27,7 +27,7 @@ spring:
             uri: ${JENKINS_URL:http://10.10.3.27:7778}
           - id: apiLosApSvcRoute
             predicates:
-              - Path=/api/legacy/los-ap-svc/**
+              - Path=/api/legacy/los-ap-data/**
             uri: ${API_URL:http://localhost:2501}            
             filters:
               - TokenRelay=
