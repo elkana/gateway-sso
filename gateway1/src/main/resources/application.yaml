@@ -3,40 +3,39 @@ spring:
       name: gateway1
 # TODO this should be set externally, e.g. in a docker-compose file      
   cloud:
-    gateway:    
-      server:
+    gateway.server:
         webmvc:
           routes:
           - id: hello-route
+            uri: ${HELLO_SERVICE_URL:http://localhost:1010}
             predicates:
               - Path=/hello/**
-            uri: ${HELLO_SERVICE_URL:http://localhost:1010}
           - id: vaadin-ui-route
+            uri: ${VAADIN_UI_URL:http://localhost:2600}            
             predicates:
               - Path=/vaadin-ui/**
-            uri: ${VAADIN_UI_URL:http://localhost:2600}            
           - id: vaadin-sso-route
+            uri: ${VAADIN_SSO_URL:http://localhost:2601}
             predicates:
               - Path=/vaadin-sso1/**
-            uri: ${VAADIN_SSO_URL:http://localhost:2601}
             filters:
               - TokenRelay=
+              - RemoveRequestHeader=Cookie
           - id: jenkins-route
+            uri: ${JENKINS_URL:http://10.10.3.27:7778}
             predicates:
               - Path=/jenkins/**
-            uri: ${JENKINS_URL:http://10.10.3.27:7778}
           - id: apiLosApSvcRoute
+            uri: ${API_URL:http://localhost:2501}            
             predicates:
               - Path=/api/legacy/los-ap-data/**
-            uri: ${API_URL:http://localhost:2501}            
-            filters:
-              - TokenRelay=
           - id: cashier-sso-route
+            uri: http://localhost:2611
             predicates:
               - Path=/cashier-sso/**
-            uri: http://localhost:2611
             filters:
               - TokenRelay=
+              - RemoveRequestHeader=Cookie
       
         # globalcors:
         #   cors-configurations:
