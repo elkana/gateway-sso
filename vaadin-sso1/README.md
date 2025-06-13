@@ -12,7 +12,7 @@ A simple working demo to test SSO Login using ROLE.
 # Keycloak Setup
 1. create REALM: `los-realm`
 2. create Realm roles: `cashier` and `superuser`
-3. create CLIENT-ID: `cashier-dev2-client`
+3. create CLIENT-ID: `los-client`
 3a. Valid Redirect Uris: 
     - `https://ppusso.devoutsys.com:7777/*`
     - `http://vaadin-sso1:8080/*`
@@ -28,7 +28,7 @@ dont forget set password
  3. Mappers > Configure a new mapper > choose `User Realm Role`
  3a. Name: `realm_access_mapper`
  3b. Token Claim Name: `realm_access.roles`
- 4. back to `Clients` to link it (only if not shown as Default) > `cashier-dev2-client` > Client scopes > Add client scope > pick `los-app-dedicated`
+ 4. back to `Clients` to link it (only if not shown as Default) > `los-client` > Client scopes > Add client scope > pick `los-app-dedicated`
 
 Done
 

@@ -35,6 +35,8 @@ spring:
             predicates:
               - Path=/cashier-sso/**
             uri: http://localhost:2611
+            filters:
+              - TokenRelay=
       
         # globalcors:
         #   cors-configurations:
