@@ -31,6 +31,10 @@ spring:
             uri: ${API_URL:http://localhost:2501}            
             filters:
               - TokenRelay=
+          - id: cashier-sso-route
+            predicates:
+              - Path=/cashier-sso/**
+            uri: http://localhost:2611
       
         # globalcors:
         #   cors-configurations:
