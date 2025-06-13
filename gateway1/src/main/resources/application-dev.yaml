@@ -1,0 +1,19 @@
+server:
+  ssl:
+    enabled: true
+    key-store: classpath:mckeystore.jks
+    key-store-password: P@ssw0rdr1
+    key-store-type: JKS
+    key-alias: jtomobcol
+# if you have crt & key instead of jks, uncomment below
+    # certificate-private-key: mckey.key
+    # certificate: cert.crt
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
+        security: DEBUG
+

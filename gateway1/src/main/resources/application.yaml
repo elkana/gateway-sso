@@ -31,6 +31,24 @@ spring:
             uri: ${API_URL:http://localhost:2501}            
             filters:
               - TokenRelay=
+      
+        # globalcors:
+        #   cors-configurations:
+        #     '[/**]':
+        #       allowedOrigins: "*"
+        #       allowedMethods: 
+        #         - GET
+        #         - POST
+        #         - DELETE
+        #       allowedHeaders:
+        #         - content-type
+        #         - Authorization
+        #         - ApiKey
+              #   - Content-Type
+              # allow-credentials: true  
+              # allowedMethods: "*"  
+        # httpclient:
+        #   connect-timeout: 2000
 
   security:
     oauth2:
@@ -45,7 +63,7 @@ spring:
           keycloak:
             issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
             token-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token
-            # token-uri: https://ppusso.devoutsys.com/oauth2/token
+            # token-uri: https://ppusso.devoutsys.com/oauth2/token salah
             user-name-attribute: preferred_username
       resourceserver:
         jwt:
