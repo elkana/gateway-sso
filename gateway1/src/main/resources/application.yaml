@@ -25,7 +25,7 @@ spring:
             predicates:
               - Path=/jenkins/**
             uri: ${JENKINS_URL:http://10.10.3.27:7778}
-          - id: api-los-ap-svc-route
+          - id: apiLosApSvcRoute
             predicates:
               - Path=/api/legacy/los-ap-svc/**
             uri: ${API_URL:http://localhost:2501}            
@@ -63,14 +63,12 @@ spring:
           keycloak:
             provider: keycloak
             client-id: los-client
-            # client-id: cashier-dev2-client
             authorization-grant-type: authorization_code
             scope: openid,profile,email,roles
         provider:
           keycloak:
             issuer-uri: https://ppusso.devoutsys.com/realms/los-realm
             token-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token
-            # token-uri: https://ppusso.devoutsys.com/oauth2/token salah
             user-name-attribute: preferred_username
       resourceserver:
         jwt:
@@ -78,6 +76,5 @@ spring:
           # jwk-set-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/certs
         opaquetoken:
           client-id: los-client
-          # client-id: cashier-dev2-client
           # client-secret: 12345678-123
           introspection-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token/introspect
