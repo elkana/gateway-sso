@@ -46,8 +46,6 @@ Part of Loan Originated System
 
 References :
 - keycloak at https://ppusso.devoutsys.com
-- https://github.com/elkana/los-ap-service.git
-- los.ap.service.url=http://los-ap-service:8080/legacy/los-ap-svc
 
 # Run
 ```sh

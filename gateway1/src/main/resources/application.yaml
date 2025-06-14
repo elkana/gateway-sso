@@ -20,7 +20,8 @@ spring:
               - Path=/vaadin-sso1/**
             filters:
               - TokenRelay=
-              - RemoveRequestHeader=Cookie
+              # RemoveRequestHeader causes issues with SSO 20260614
+              # - RemoveRequestHeader=Cookie
           - id: jenkins-route
             uri: ${JENKINS_URL:http://10.10.3.27:7778}
             predicates:
@@ -35,7 +36,7 @@ spring:
               - Path=/cashier-sso/**
             filters:
               - TokenRelay=
-              - RemoveRequestHeader=Cookie
+              # - RemoveRequestHeader=Cookie
       
         # globalcors:
         #   cors-configurations:
