@@ -9,6 +9,4 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar /app/app.jar
 ENV TZ="Asia/Jakarta"
-# beware port conflict. app-gui starts on 26__, app-service starts on 25__
-# EXPOSE 1011
 ENTRYPOINT ["java","-jar","app.jar", "--spring.profiles.active=dev"]

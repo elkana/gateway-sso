@@ -7,7 +7,6 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar /app/app.jar
 ENV TZ="Asia/Jakarta"
-# beware port conflict. app-gui starts on 26__, app-service starts on 25__
-# EXPOSE 7777
+# be careful reserved name application.yaml will replace the default application.yaml in the same jar location
 # ENTRYPOINT ["java","-jar","app.jar", "--spring.profiles.active=uat", "--spring.config.additional-location=application.yaml"]
 ENTRYPOINT ["java","-jar","app.jar", "--spring.profiles.active=uat"]
