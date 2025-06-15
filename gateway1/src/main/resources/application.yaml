@@ -63,6 +63,7 @@ spring:
           keycloak:
             provider: keycloak
             client-id: los-client
+            client-secret: TayXv5sIev3NqlpAUECRXe6pAmypOWHC
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code
             scope: openid,profile,email,roles
@@ -77,5 +78,5 @@ spring:
           # jwk-set-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/certs
         opaquetoken:
           client-id: los-client
-          client-secret: 12345678-123-cantnull
+          client-secret: TayXv5sIev3NqlpAUECRXe6pAmypOWHC
           introspection-uri: https://ppusso.devoutsys.com/realms/los-realm/protocol/openid-connect/token/introspect
